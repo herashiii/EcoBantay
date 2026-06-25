@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import Svg, { Polygon } from "react-native-svg";
 import { Lock, User } from "lucide-react-native";
@@ -56,8 +57,11 @@ export default function LoginScreen() {
 
         <Text style={styles.forgot}>Forgot Password?</Text>
 
-        <Pressable style={styles.loginButton}>
-          <Text style={styles.loginText}>LOGIN</Text>
+        <Pressable
+            style={styles.loginButton}
+            onPress={() => router.replace("/dashboard")}
+        >
+            <Text style={styles.loginText}>LOGIN</Text>
         </Pressable>
       </View>
     </View>
@@ -77,16 +81,16 @@ const styles = StyleSheet.create({
     top: 0,
   },
   content: {
-    position: "absolute",
-    top: "10%",
-    right: "25%",
-    width: 520,
-    alignItems: "center",
+  position: "absolute",
+  right: "18%",
+  width: 800,
+  alignItems: "center",
   },
   logo: {
-    width: "90%",
-    height: 340,
-    marginBottom: -25,
+    width: 900,
+    height: 620,
+    right: 50,
+    marginBottom: -220,
   },
   title: {
     fontFamily: "Montserrat_800ExtraBold",

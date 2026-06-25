@@ -1,5 +1,5 @@
 import LoginScreen from "../screens/LoginScreen";
 
-export default function Index() {
+export default function Home() {
   return <LoginScreen />;
 }

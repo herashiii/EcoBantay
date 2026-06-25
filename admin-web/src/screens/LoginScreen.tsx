@@ -36,7 +36,7 @@ export default function LoginScreen() {
         <Text style={styles.title}>ADMIN LOG IN</Text>
 
         <View style={styles.inputBox}>
-          <User size={32} color="#000" fill="#000" />
+          <User size={32} color="#FFFFFF" />
           <TextInput
             placeholder="Username"
             placeholderTextColor="#FFFFFF"
@@ -45,7 +45,7 @@ export default function LoginScreen() {
         </View>
 
         <View style={styles.inputBox}>
-          <Lock size={30} color="#000" fill="#000" />
+          <Lock size={30} color="#FFFFFF" />
           <TextInput
             placeholder="Password"
             placeholderTextColor="#FFFFFF"

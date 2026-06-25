@@ -1,0 +1,308 @@
+:root {
+  --green: #2f7d4f;
+  --light-green: #e9f5ee;
+  --dark: #1f2933;
+  --gray: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f7faf8;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+}
+
+.logo-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.logo-icon {
+  background: var(--light-green);
+  color: var(--green);
+  padding: 10px;
+  border-radius: 14px;
+}
+
+.logo-section h2 {
+  margin: 0;
+  color: var(--green);
+}
+
+.logo-section p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item,
+.logout-btn {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: var(--gray);
+  font-size: 15px;
+}
+
+.nav-item.active {
+  background: var(--green);
+  color: white;
+}
+
+.logout-btn {
+  margin-top: auto;
+  color: #b91c1c;
+}
+
+.main-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+
+.topbar {
+  height: 76px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  padding: 10px 14px;
+  border-radius: 14px;
+  width: 320px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-profile p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.page-content {
+  padding: 28px;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: var(--gray);
+  margin-top: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.stat-card,
+.panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--gray);
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: var(--green);
+}
+
+.two-column,
+.export-grid,
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+th {
+  color: var(--gray);
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.badge.review {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.badge.pending {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.badge.approved {
+  background: var(--light-green);
+  color: var(--green);
+}
+
+.primary-btn,
+.table-btn,
+.warning-btn,
+.format-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--green);
+  color: white;
+}
+
+.table-btn {
+  background: var(--light-green);
+  color: var(--green);
+  margin-right: 8px;
+}
+
+.warning-btn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.event-card {
+  background: var(--bg);
+  padding: 16px;
+  border-radius: 14px;
+  margin-top: 12px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.format-btn {
+  background: var(--light-green);
+  color: var(--green);
+}
+
+.full {
+  width: 100%;
+  margin-top: 20px;
+}

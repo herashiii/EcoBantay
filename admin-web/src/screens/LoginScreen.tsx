@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, TextInput, View , useWindowDimensions} from "react-native";
 import Svg, { Polygon } from "react-native-svg";
 import { Lock, User } from "lucide-react-native";
 import {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   content: {
   position: "absolute",
-  right: "18%",
+  right: "12%",
   width: 800,
   alignItems: "center",
   },
@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
     width: 900,
     height: 620,
     right: 50,
-    marginBottom: -220,
+    bottom: 50,
+    marginBottom: -270,
   },
   title: {
     fontFamily: "Montserrat_800ExtraBold",

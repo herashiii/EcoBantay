@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "Montserrat_700Bold",
     fontSize: 17,
+    width: 100,
     color: "#000",
   },
   value: {

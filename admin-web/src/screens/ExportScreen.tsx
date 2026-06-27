@@ -1,5 +1,9 @@
-import ExportScreen from "../screens/ExportScreen";
+import { View, Text } from "react-native";
 
-export default function Export() {
-  return <ExportScreen />;
+export default function ExportScreen() {
+  return (
+    <View>
+      <Text>Export Screen</Text>
+    </View>
+  );
 }

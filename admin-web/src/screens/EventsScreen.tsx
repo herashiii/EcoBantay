@@ -1,5 +1,9 @@
-import EventsScreen from "../screens/EventsScreen";
+import { View, Text } from "react-native";
 
-export default function Events() {
-  return <EventsScreen />;
+export default function EventsScreen() {
+  return (
+    <View>
+      <Text>Events Screen</Text>
+    </View>
+  );
 }

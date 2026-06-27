@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: "Montserrat_700Bold",
-    fontSize: 11,
+    fontSize: 15,
     color: "#000",
   },
   role: {
     fontFamily: "Montserrat_700Bold",
-    fontSize: 7,
+    fontSize: 11,
     color: "#000",
   },
 });

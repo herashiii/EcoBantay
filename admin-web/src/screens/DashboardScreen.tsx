@@ -64,13 +64,31 @@ export default function DashboardScreen() {
             <View style={[styles.tableHeader, { height: 40 * s, paddingHorizontal: 10 * s }]}>
   <Text style={[styles.th, styles.idCol, { fontSize: 18 * s }]}>ID</Text>
 
-  <Text style={[styles.th, styles.reportCol, { fontSize: 18 * s }]}>
-    Report Title
-  </Text>
+  <Text
+  style={[
+    styles.th,
+    styles.reportCol,
+    {
+      fontSize: 18 * s,
+      marginLeft: 12 * s,
+    },
+  ]}
+>
+  Report Title
+</Text>
 
-  <Text style={[styles.th, styles.locationCol, { fontSize: 18 * s }]}>
-    Location
-  </Text>
+  <Text
+  style={[
+    styles.th,
+    styles.locationCol,
+    {
+      fontSize: 18 * s,
+      transform: [{ translateX: -10 * s }],
+    },
+  ]}
+>
+  Location
+</Text>
 
   <Text
     style={[
@@ -92,6 +110,7 @@ export default function DashboardScreen() {
       {
         fontSize: 18 * s,
         textAlign: "center",
+        transform: [{ translateX: 20 * s }],
       },
     ]}
   >
@@ -105,6 +124,8 @@ export default function DashboardScreen() {
       styles.dateCol,
       {
         fontSize: 18 * s,
+        textAlign: "center",
+        marginLeft: 8 * s,
       },
     ]}
   >
@@ -121,21 +142,64 @@ export default function DashboardScreen() {
                   <Text style={[styles.reportTitle, { fontSize: 16 * s }]}>{r[1]}</Text>
                 </View>
 
-                <Text style={[styles.td, styles.locationCol, { fontSize: 16 * s }]}>{r[2]}</Text>
+                <Text
+  style={[
+    styles.td,
+    styles.locationCol,
+    {
+      fontSize: 16 * s,
+      transform: [{ translateX: -15 * s }],
+    },
+  ]}
+>
+  {r[2]}
+</Text>
 
                 <View style={[styles.categoryCol, styles.badgeWrap]}>
-                  <Text style={[styles.badge, badgeColor(r[3]), { fontSize: 16 * s, paddingVertical: 7 * s }]}>
+                  <Text
+                    style={[
+                      styles.badge,
+                      badgeColor(r[3]),
+                      {
+                        fontSize: 16 * s,
+                        paddingHorizontal: 10 * s,
+                        paddingVertical: 7 * s,
+                      },
+                    ]}
+                  >
                     {r[3]}
                   </Text>
                 </View>
 
                 <View style={[styles.statusCol, styles.badgeWrap]}>
-                  <Text style={[styles.badge, statusColor(r[4]), { fontSize: 16 * s, paddingVertical: 7 * s }]}>
+                  <Text
+                    style={[
+                      styles.badge,
+                      statusColor(r[4]),
+                      {
+                        fontSize: 16 * s,
+                        paddingHorizontal: 10 * s,
+                        paddingVertical: 7 * s,
+                        transform: [{ translateX: 10 * s }],
+                      },
+                    ]}
+                  >
                     {r[4]}
                   </Text>
                 </View>
 
-                <Text style={[styles.td, styles.dateCol, { fontSize: 16 * s }]}>{r[5]}</Text>
+                <Text
+                  style={[
+                    styles.td,
+                    styles.dateCol,
+                    {
+                      fontSize: 16 * s,
+                      textAlign: "center",
+                    },
+                  ]}
+                >
+                  {r[5]}
+                </Text>
               </View>
             ))}
 
@@ -278,29 +342,30 @@ const styles = StyleSheet.create({
   },
 
   idCol: {
-    width: "10%",
-  },
-  reportCol: {
-    width: "25%",
-  },
-  locationCol: {
-    width: "15%",
-  },
-  categoryCol: {
-    width: "16%",
-  },
-  statusCol: {
-    width: "16%",
-  },
-  dateCol: {
-    width: "18%",
-  },
+  width: "10%",
+},
+reportCol: {
+  width: "26%",
+},
+locationCol: {
+  width: "17%",
+},
+categoryCol: {
+  width: "14%",
+},
+statusCol: {
+  width: "15%",
+},
+dateCol: {
+  width: "18%",
+},
 
   reportTitleBox: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
+  flexDirection: "row",
+  alignItems: "center",
+  gap: 10,
+  marginLeft: 12,
+},
   imageBox: {
     borderRadius: 4,
     backgroundColor: "#d9d9d9",
@@ -315,13 +380,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   badge: {
-    width: "92%",
-    minWidth: 90,
-    maxWidth: 150,
-    fontFamily: "Montserrat_700Bold",
-    textAlign: "center",
-    borderRadius: 8,
-    overflow: "hidden",
+  alignSelf: "center",
+  paddingHorizontal: 10,
+  paddingVertical: 7,
+  borderRadius: 8,
+  fontFamily: "Montserrat_700Bold",
+  textAlign: "center",
+  overflow: "hidden",
+
+  flexGrow: 0,
+  flexShrink: 0,
   },
   paginationRow: {
     marginTop: 10,

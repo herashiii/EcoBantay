@@ -24,7 +24,6 @@ const events = [
 
 export default function DashboardScreen() {
   const { width, height } = useWindowDimensions();
-
   const s = Math.min(width / 1920, height / 1080);
   const panelHeight = height * 0.58;
 
@@ -40,10 +39,10 @@ export default function DashboardScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={{ marginTop: height * 0.025 }}>
-          <Text style={[styles.welcome, { fontSize: 24 * s }]}>
+          <Text style={[styles.welcome, { fontSize: 32 * s }]}>
             WELCOME BACK, [ADMIN NAME]
           </Text>
-          <Text style={[styles.subtitle, { fontSize: 16 * s }]}>
+          <Text style={[styles.subtitle, { fontSize: 18 * s }]}>
             Here’s what’s happening with environmental reports
           </Text>
         </View>
@@ -59,50 +58,92 @@ export default function DashboardScreen() {
           <View style={[styles.reportsPanel, { height: panelHeight, padding: 16 * s }]}>
             <View style={styles.panelHeader}>
               <Text style={[styles.panelTitle, { fontSize: 30 * s }]}>Recent Reports</Text>
-              <Text style={[styles.viewAll, { fontSize: 10 * s }]}>View All</Text>
+              <Text style={[styles.viewAll, { fontSize: 16 * s }]}>View All</Text>
             </View>
 
-            <View style={[styles.tableHeader, { height: 36 * s, paddingHorizontal: 10 * s }]}>
-              <Text style={[styles.th, styles.colId, { fontSize: 14 * s }]}>ID</Text>
-              <Text style={[styles.th, styles.colReport, { fontSize: 14 * s }]}>Report Title</Text>
-              <Text style={[styles.th, styles.colLocation, { fontSize: 14 * s }]}>Location</Text>
-              <Text style={[styles.th, styles.colCategory, { fontSize: 14 * s }]}>Category</Text>
-              <Text style={[styles.th, styles.colStatus, { fontSize: 14 * s }]}>Status</Text>
-              <Text style={[styles.th, styles.colDate, { fontSize: 14 * s }]}>Date Submitted</Text>
-            </View>
+            <View style={[styles.tableHeader, { height: 40 * s, paddingHorizontal: 10 * s }]}>
+  <Text style={[styles.th, styles.idCol, { fontSize: 18 * s }]}>ID</Text>
+
+  <Text style={[styles.th, styles.reportCol, { fontSize: 18 * s }]}>
+    Report Title
+  </Text>
+
+  <Text style={[styles.th, styles.locationCol, { fontSize: 18 * s }]}>
+    Location
+  </Text>
+
+  <Text
+    style={[
+      styles.th,
+      styles.categoryCol,
+      {
+        fontSize: 18 * s,
+        textAlign: "center",
+      },
+    ]}
+  >
+    Category
+  </Text>
+
+  <Text
+    style={[
+      styles.th,
+      styles.statusCol,
+      {
+        fontSize: 18 * s,
+        textAlign: "center",
+      },
+    ]}
+  >
+    Status
+  </Text>
+
+  <Text
+    numberOfLines={1}
+    style={[
+      styles.th,
+      styles.dateCol,
+      {
+        fontSize: 18 * s,
+      },
+    ]}
+  >
+    Date Submitted
+  </Text>
+</View>
 
             {reports.map((r, i) => (
-              <View key={i} style={[styles.tableRow, { height: 78 * s, paddingHorizontal: 10 * s }]}>
-                <Text style={[styles.td, styles.colId, { fontSize: 13 * s }]}>{r[0]}</Text>
+              <View key={i} style={[styles.tableRow, { height: 105 * s, paddingHorizontal: 10 * s }]}>
+                <Text style={[styles.td, styles.idCol, { fontSize: 16 * s }]}>{r[0]}</Text>
 
-                <View style={[styles.reportTitleBox, styles.colReport]}>
-                  <View style={[styles.imageBox, { width: 48 * s, height: 48 * s }]} />
-                  <Text style={[styles.reportTitle, { fontSize: 13 * s }]}>{r[1]}</Text>
+                <View style={[styles.reportTitleBox, styles.reportCol]}>
+                  <View style={[styles.imageBox, { width: 50 * s, height: 50 * s }]} />
+                  <Text style={[styles.reportTitle, { fontSize: 16 * s }]}>{r[1]}</Text>
                 </View>
 
-                <Text style={[styles.td, styles.colLocation, { fontSize: 13 * s }]}>{r[2]}</Text>
+                <Text style={[styles.td, styles.locationCol, { fontSize: 16 * s }]}>{r[2]}</Text>
 
-                <View style={styles.colCategory}>
-                  <Text style={[styles.badge, badgeColor(r[3]), { fontSize: 9 * s, paddingVertical: 6 * s }]}>
+                <View style={[styles.categoryCol, styles.badgeWrap]}>
+                  <Text style={[styles.badge, badgeColor(r[3]), { fontSize: 16 * s, paddingVertical: 7 * s }]}>
                     {r[3]}
                   </Text>
                 </View>
 
-                <View style={styles.colStatus}>
-                  <Text style={[styles.badge, statusColor(r[4]), { fontSize: 9 * s, paddingVertical: 6 * s }]}>
+                <View style={[styles.statusCol, styles.badgeWrap]}>
+                  <Text style={[styles.badge, statusColor(r[4]), { fontSize: 16 * s, paddingVertical: 7 * s }]}>
                     {r[4]}
                   </Text>
                 </View>
 
-                <Text style={[styles.td, styles.colDate, { fontSize: 13 * s }]}>{r[5]}</Text>
+                <Text style={[styles.td, styles.dateCol, { fontSize: 16 * s }]}>{r[5]}</Text>
               </View>
             ))}
 
             <View style={styles.paginationRow}>
-              <Text style={[styles.showing, { fontSize: 12 * s }]}>
+              <Text style={[styles.showing, { fontSize: 16 * s }]}>
                 Showing 1 to 4 of 128 reports
               </Text>
-              <Text style={[styles.pagination, { fontSize: 14 * s }]}>
+              <Text style={[styles.pagination, { fontSize: 16 * s }]}>
                 ‹  1  2  3  ...  20  ›
               </Text>
             </View>
@@ -111,15 +152,15 @@ export default function DashboardScreen() {
           <View style={[styles.eventsPanel, { height: panelHeight, padding: 16 * s }]}>
             <View style={styles.panelHeader}>
               <Text style={[styles.panelTitle, { fontSize: 30 * s }]}>Upcoming Events</Text>
-              <Text style={[styles.viewAll, { fontSize: 10 * s }]}>View All</Text>
+              <Text style={[styles.viewAll, { fontSize: 16 * s }]}>View All</Text>
             </View>
 
             {events.map((event, index) => (
               <View key={index} style={[styles.eventRow, { height: 96 * s }]}>
                 <View style={[styles.eventImage, { width: 58 * s, height: 58 * s }]} />
                 <View style={styles.eventInfo}>
-                  <Text style={[styles.eventTitle, { fontSize: 15 * s }]}>{event[0]}</Text>
-                  <Text style={[styles.eventDate, { fontSize: 10 * s }]}>
+                  <Text style={[styles.eventTitle, { fontSize: 18 * s }]}>{event[0]}</Text>
+                  <Text style={[styles.eventDate, { fontSize: 14 * s }]}>
                     ▣ {event[1]}  ♦ West Balabag
                   </Text>
                 </View>
@@ -127,7 +168,7 @@ export default function DashboardScreen() {
                   style={[
                     styles.upcomingBadge,
                     {
-                      fontSize: 11 * s,
+                      fontSize: 16 * s,
                       paddingHorizontal: 18 * s,
                       paddingVertical: 10 * s,
                     },
@@ -162,7 +203,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffff",
   },
-
   welcome: {
     fontFamily: "Montserrat_700Bold",
     color: "#0B5A1E",
@@ -172,32 +212,28 @@ const styles = StyleSheet.create({
     color: "#5D8A5F",
     marginTop: 2,
   },
-
   cards: {
     flexDirection: "row",
     width: "100%",
   },
-
   contentRow: {
     flexDirection: "row",
     width: "100%",
   },
-
   reportsPanel: {
-    flex: 1.15,
+    flex: 1.28,
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#d6d6d6",
     borderRadius: 8,
   },
   eventsPanel: {
-    flex: 1,
+    flex: 0.88,
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#d6d6d6",
     borderRadius: 8,
   },
-
   panelHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -217,7 +253,6 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     color: "#000",
   },
-
   tableHeader: {
     backgroundColor: "#f6f6f6",
     borderWidth: 1,
@@ -232,22 +267,34 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-
   th: {
     fontFamily: "Montserrat_700Bold",
     color: "#000",
+    textAlign: "left",
   },
   td: {
     fontFamily: "Montserrat_700Bold",
     color: "#000",
   },
 
-  colId: { flex: 0.75 },
-  colReport: { flex: 1.75 },
-  colLocation: { flex: 1.35 },
-  colCategory: { flex: 1.2 },
-  colStatus: { flex: 1.1 },
-  colDate: { flex: 1.2 },
+  idCol: {
+    width: "10%",
+  },
+  reportCol: {
+    width: "25%",
+  },
+  locationCol: {
+    width: "15%",
+  },
+  categoryCol: {
+    width: "16%",
+  },
+  statusCol: {
+    width: "16%",
+  },
+  dateCol: {
+    width: "18%",
+  },
 
   reportTitleBox: {
     flexDirection: "row",
@@ -259,20 +306,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#d9d9d9",
   },
   reportTitle: {
-    flex: 1,
+    flex: 0.8,
     fontFamily: "Montserrat_700Bold",
     color: "#000",
   },
-
+  badgeWrap: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   badge: {
-    minWidth: 95,
-    maxWidth: 115,
+    width: "92%",
+    minWidth: 90,
+    maxWidth: 150,
     fontFamily: "Montserrat_700Bold",
     textAlign: "center",
-    borderRadius: 4,
+    borderRadius: 8,
     overflow: "hidden",
   },
-
   paginationRow: {
     marginTop: 10,
     flexDirection: "row",
@@ -286,7 +336,6 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat_700Bold",
     color: "#34733B",
   },
-
   eventRow: {
     borderBottomWidth: 1,
     borderBottomColor: "#ddd",

@@ -150,11 +150,11 @@ export default function ReportsScreen() {
 
           <View style={styles.buttonColumn}>
             <View style={styles.smallButton}>
-              <Filter size={14 * s} color="#20B83B" />
+              <Filter size={14 * s} color="#34733B" />
               <Text style={[styles.buttonText, { fontSize: 14 * s }]}>Filter</Text>
             </View>
             <View style={styles.smallButton}>
-              <Download size={14 * s} color="#20B83B" />
+              <Download size={14 * s} color="#34733B" />
               <Text style={[styles.buttonText, { fontSize: 14 * s }]}>Export</Text>
             </View>
           </View>
@@ -418,7 +418,7 @@ const styles = StyleSheet.create({
     height: 26,
     minWidth: 82,
     borderWidth: 1,
-    borderColor: "#9DE5A0",
+    borderColor: "#34733B",
     borderRadius: 5,
     flexDirection: "row",
     alignItems: "center",
@@ -440,7 +440,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     fontFamily: "Montserrat_700Bold",
-    color: "#20B83B",
+    color: "#34733B",
   },
 
   tablePanel: {
